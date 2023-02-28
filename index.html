@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/png" sizes="96x96" rel="icon" href="https://img.icons8.com/color/48/null/bmi.png">
+    <title>BMI</title>
+</head>
+<style>
+    * {
+        margin: 10px 0px 0px 0px;
+        padding: 0;
+        font-family: sans-serif;
+    }
+
+    body {
+        background: #d6e7f4;
+    }
+
+    .main_container {
+        width: 27%;
+        height: 631px;
+        display: flex;
+        justify-content: flex-end;
+        margin: 0px auto;
+        background: #ffffff;
+        border-radius: 45px;
+    }
+
+    .sub_container {
+        width: 38%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .sub_container label {
+        margin-top: 24px;
+        font-weight: 600;
+        color: #00000078;
+        font-size: 20px;
+    }
+
+    .img_container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .img_container img {
+        height: 47%;
+        position: relative;
+        animation: translate 5s infinite linear;
+    }
+
+    .age_input,
+    .height_input,
+    .weight_input {
+        width: 100px;
+        height: 40px;
+        font-size: 22px;
+        text-align: center;
+        border: unset;
+        border-bottom: 1px solid #00000040 !important;
+        background: #ffffff;
+        color: #000000b8;
+        outline: none;
+    }
+
+    .height_input::placeholder,
+    .weight_input::placeholder {
+        font-size: 15px !important;
+        color: #00000042;
+    }
+
+    .btn {
+        border-radius: 6px 31px;
+        padding: 11px 25px;
+        border: unset;
+        position: relative;
+        right: 115px;
+        top: 100px;
+        color: white;
+        font-size: 26px;
+        background-image: linear-gradient(56deg, #3e65aa, #329de1);
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    .answer_class {
+        position: absolute;
+        top: 117px;
+        font-size: 40px;
+        font-weight: 500;
+        color: #6faf3c;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .para1 {
+        font-size: 100px;
+    }
+
+    @keyframes translate {
+        0% {
+            transform: translatex(50px);
+        }
+
+        25% {
+            transform: translatex(-75px);
+        }
+
+        50% {
+            transform: translatex(75px);
+        }
+
+        100% {
+            transform: translatex(-50px);
+        }
+    }
+
+    @media (max-width:1440px) {
+        .answer_class {
+            top: 46px !important;
+            right: 14.5em !important;
+        }
+    }
+
+    @media (max-width:1024px) {
+        .btn {
+            padding: 11px 14px !important;
+            right: 81px !important;
+            top: 45px !important;
+            font-size: 20px !important;
+        }
+
+        .answer_class {
+            top: 51px !important;
+            right: 12.5em !important;
+            font-size: 32px !important;
+
+        }
+    }
+
+    @media (max-width:768px) {
+        .answer_class {
+            top: 63px !important;
+            right: 6.5em !important;
+        }
+
+        .main_container {
+            width: 70% !important;
+        }
+
+        .btn {
+            right: 160px !important;
+        }
+    }
+
+    @media (max-width:425px) {
+        .answer_class {
+            top: 51px !important;
+            right: 1.5em !important;
+        }
+
+        .main_container {
+            width: 88% !important;
+        }
+    }
+
+    @media (max-width:375px) {
+        .main_container {
+            width: 87% !important;
+            height: 531px !important;
+        }
+
+        .img_container img {
+            height: 44% !important;
+        }
+
+        .sub_container {
+            width: 38% !important;
+        }
+
+        .btn {
+            padding: 11px 11px !important;
+            right: 109px !important;
+            top: 45px !important;
+
+        }
+
+        .answer_class {
+            top: 31px !important;
+            right: 2.5em !important;
+            font-size: 30px;
+        }
+    }
+
+    @media (max-width:320px) {
+        .answer_class {
+            top: 44px !important;
+            right: 1.5em !important;
+        }
+
+        .main_container {
+            width: 87% !important;
+            height: 588px !important;
+            margin: auto !important;
+        }
+
+        .img_container {
+            position: relative;
+            width: 60% !important;
+        }
+
+        .img_container img {
+            height: 41% !important;
+            width: 107% !important;
+        }
+
+        .sub_container {
+            width: 36% !important;
+            padding-right: 8px !important;
+        }
+
+        .btn {
+            border-radius: 6px 16px !important;
+            padding: 11px 16px !important;
+            right: 79px !important;
+            top: 57px !important;
+            font-size: 18px !important;
+        }
+    }
+</style>
+
+<body>
+    <div class="answer_class" id="answer"></div>
+    <div id="message"></div>
+    <div class="main_container">
+        <div class="img_container">
+            <img src="—Pngtree—gesture cartoon cartoon cartoon man_3921517.png" alt="">
+        </div>
+        <div class="sub_container">
+            <label>Age</label>
+            <input class="age_input" type="text">
+            <label>Height</label>
+            <input class="height_input" type="number" id="inputone" autocomplete="off" placeholder="Feet">
+            <label>Weight</label>
+            <input class="weight_input" type="number" id="inputtwo" autocomplete="off" placeholder="Kg">
+            <button class="btn" onclick="myFunction()">calculate</button>
+        </div>
+    </div>
+
+    <script>
+        function myFunction() {
+            let weight = document.getElementById("inputtwo").value;
+            let height = document.getElementById("inputone").value;
+            let feetToInch = height * 30.48
+            let bmi = (weight / ((feetToInch * feetToInch) / 10000)).toFixed(1);
+            if (bmi <= 18.5) {
+                document.getElementById("answer").innerHTML = bmi + "<br>" + "Under Weight";
+            } else if (bmi > 18.5 && bmi <= 24.9) {
+                document.getElementById("answer").innerHTML = bmi + "<br>" + "Normal Weight";
+            } else if (bmi >= 25.0 && bmi <= 29.9) {
+                document.getElementById("answer").innerHTML = bmi + "<br>" + "Over Weight";
+            } else if (bmi >= 30.0 && bmi <= 34.9) {
+                document.getElementById("answer").innerHTML = bmi + "<br>" + "Obese Type 1";
+            } else if (bmi >= 35.0 && bmi <= 39.9) {
+                document.getElementById("answer").innerHTML = bmi + "<br>" + "Obese Type 2";
+            } else if (bmi >= 40) {
+                document.getElementById("answer").innerHTML = bmi + "<br>" + "Obese Type 3";
+            }
+        }
+    </script>
+</body>
+
+</html>
